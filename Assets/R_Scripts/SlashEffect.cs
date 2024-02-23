@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlashEffect : MonoBehaviour
@@ -18,5 +19,7 @@ public class SlashEffect : MonoBehaviour
             GameObject slashParticle = Instantiate(slashParticlePrefab, slashPointLeft.position, Quaternion.identity);
             Destroy(slashParticle, slashDuration);
         }
+
+        
     }
 }

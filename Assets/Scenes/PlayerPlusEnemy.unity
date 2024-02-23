@@ -427,6 +427,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1551301453904691145, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 1661185255604906086, guid: fb60c6f5c694f2346a114e0036b9299f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -476,6 +481,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693703625167678555, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3772795042073571983, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Speed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158310663684702827, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.5017728
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158310663684702827, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2.0366762
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158310663684702827, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.4335834
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158310663684702827, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.109921575
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158310663684702827, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0.91660196
+      objectReference: {fileID: 0}
+    - target: {fileID: 5158310663684702827, guid: fb60c6f5c694f2346a114e0036b9299f,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.004501267
       objectReference: {fileID: 0}
     - target: {fileID: 6743188192297066522, guid: fb60c6f5c694f2346a114e0036b9299f,
         type: 3}
@@ -1635,7 +1680,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 84
   m_CollisionDetection: 2
 --- !u!114 &1595582933
 MonoBehaviour:

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace CodeMonkey.HealthSystemCM {
 
@@ -16,6 +17,13 @@ namespace CodeMonkey.HealthSystemCM {
         private HealthSystem healthSystem;
 
 
+        private void Start()
+        {
+            //healthSystem.OnDead+= HealthSystem_OnDead;
+        }
+
+       
+
         private void Awake() {
             // Create Health System
             healthSystem = new HealthSystem(healthAmountMax);
@@ -31,6 +39,20 @@ namespace CodeMonkey.HealthSystemCM {
         public HealthSystem GetHealthSystem() {
             return healthSystem;
         }
+
+
+        // public void Damage(float damage)
+        // {
+        //     healthSystem.Damage(damage);
+        // }
+
+
+        //  private void HealthSystem_OnDead(object sender, EventArgs e)
+        // {
+        //     Debug.Log("Died");
+        // }
+
+        
 
 
     }

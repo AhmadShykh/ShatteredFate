@@ -17,7 +17,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     //Health And Damage
     [SerializeField] HealthSystemComponent _agentHealth;
-    float Damage = 10;
+    [SerializeField]   float Damage = 10;
 
     //Patroling
     public Vector3 walkPoint;
@@ -78,6 +78,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void ChasePlayer()
     {
+        _enemyAnimator.SetTrigger("Walk");
         agent.SetDestination(player.position);
     }
 

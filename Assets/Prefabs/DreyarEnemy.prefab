@@ -1276,6 +1276,7 @@ GameObject:
   - component: {fileID: 7209841762546790947}
   - component: {fileID: 105110162941483517}
   - component: {fileID: 8390377641528776965}
+  - component: {fileID: 1393337618641704503}
   m_Layer: 0
   m_Name: Dreyar By M.Aure
   m_TagString: Untagged
@@ -1334,8 +1335,8 @@ MonoBehaviour:
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  _enemyAnimator: {fileID: 0}
-  _agentHealth: {fileID: 0}
+  _enemyAnimator: {fileID: 1393337618641704503}
+  _agentHealth: {fileID: 2306481900294183747}
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenAttacks: 2.3
@@ -1413,6 +1414,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!95 &1393337618641704503
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5251434260798056471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 3f2ed3161d456b544be393025b949863, type: 3}
+  m_Controller: {fileID: 9100000, guid: c5b40006e8f686c49abff051449dded3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5597898853809117073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2530,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2503494517291264368}
     m_Modifications:
+    - target: {fileID: 6848739073373570983, guid: f1419c2a3f5ecf44e824039f908fea60,
+        type: 3}
+      propertyPath: getHealthSystemGameObject
+      value: 
+      objectReference: {fileID: 5251434260798056471}
     - target: {fileID: 6848739074368699834, guid: f1419c2a3f5ecf44e824039f908fea60,
         type: 3}
       propertyPath: m_Name

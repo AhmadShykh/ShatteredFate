@@ -8,7 +8,7 @@ ModelImporter:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -77,13 +77,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - adf18c91371d1a04a9a1fa08af32357c
-  - bf1a977b3fa658848bcda60f14bd606d
-  - fa46fc8b49a845342b4edf70310ed790
-  - 02d11d5dfc7d57f44806d029d1a5efe2
-  - 647691271e508f8448c97d2e446d3aa4
-  - a737c87083c9e9141b5f98df46e685ff
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3

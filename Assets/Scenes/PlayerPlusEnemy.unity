@@ -247,7 +247,6 @@ MonoBehaviour:
   moveSpeed: 20
   animator: {fileID: 0}
   playerModel: {fileID: 0}
-  shooter: {fileID: 0}
 --- !u!114 &146805803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1597,7 +1596,6 @@ MonoBehaviour:
   moveSpeed: 50
   animator: {fileID: 1595582931}
   playerModel: {fileID: 1595582930}
-  shooter: {fileID: 1595582933}
 --- !u!4 &1595582930 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5020810793632654712, guid: a32b89e71fbd51d4d9b3d270682a75ce,

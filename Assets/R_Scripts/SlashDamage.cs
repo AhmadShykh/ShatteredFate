@@ -13,7 +13,7 @@ public class SlashDamage : MonoBehaviour
     {
         if(other.tag=="Enemy")
         {
-            other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(5f);
+            other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(15f);
             SoundManager.instance.playSoundEffect(enemyHurtSFX);
         }
     }

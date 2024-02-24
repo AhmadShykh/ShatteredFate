@@ -2192,7 +2192,7 @@ PrefabInstance:
     - target: {fileID: 6743188192297066522, guid: fb60c6f5c694f2346a114e0036b9299f,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8348364849221427232, guid: fb60c6f5c694f2346a114e0036b9299f,
         type: 3}
@@ -3615,6 +3615,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DreyarEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8595947906207034137, guid: 6660cad0ed9a12f4fbe6a97225f270ab,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9066453411240599368, guid: 6660cad0ed9a12f4fbe6a97225f270ab,
         type: 3}

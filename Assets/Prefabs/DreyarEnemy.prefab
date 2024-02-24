@@ -1326,7 +1326,7 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 30
   timeBetweenAttacks: 1.02
-  sightRange: 30
+  sightRange: 83.4
   attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -1340,7 +1340,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 13
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -1438,6 +1438,8 @@ MonoBehaviour:
   healthAmountMax: 100
   startingHealthAmount: 0
   deathAnimationTime: 2
+  enemyDeathSFX: {fileID: 0}
+  bossDied: 0
 --- !u!1 &5597898853809117073
 GameObject:
   m_ObjectHideFlags: 0

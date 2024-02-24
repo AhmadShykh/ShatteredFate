@@ -20,11 +20,17 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Bullet collided with: " + collision.collider.name);
 
-            if(collision.transform.tag=="Enemy")
+            if(collision.transform.tag=="Enemy" && collision.collider.name!="Dreyar By M.Aure")
             {
                 collision.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(10f);
                 SoundManager.instance.playSoundEffect(enemyHurtSFX);
 
+
+            }
+            else if(collision.collider.name!="Dreyar By M.Aure")
+            {
+                collision.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(3f);
+                SoundManager.instance.playSoundEffect(enemyHurtSFX);
 
             }
 

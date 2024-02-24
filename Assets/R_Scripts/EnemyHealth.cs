@@ -24,6 +24,9 @@ public class EnemyHealth : MonoBehaviour, IGetHealthSystem
     public AudioClip enemyDeathSFX;
 
 
+    public bool bossDied=false;
+
+
 
     private void Start()
     {
@@ -65,6 +68,7 @@ public class EnemyHealth : MonoBehaviour, IGetHealthSystem
 
 		if (!dead)
 		{
+            bossDied=true;
             //GetComponent<EnemyAiTutorial>().SetStop(true);
             this.GetComponent<EnemyAiTutorial>().enabled = false;
             enemyAnim.SetTrigger("Death");

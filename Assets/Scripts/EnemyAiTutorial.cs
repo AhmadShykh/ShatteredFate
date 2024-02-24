@@ -16,7 +16,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
 
     //Health And Damage
-    [SerializeField]   float Damage = 10;
+    [SerializeField]   float Damage = 7f;
 
     //Patroling
     public Vector3 walkPoint;

@@ -4,15 +4,50 @@ using UnityEngine;
 
 public class FallArea : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject LeaveZoneMessage;
+
+    public PlayerHealth playerHealth;
+
+    public bool canDamage= true;
+
+
+    void OnCollisionStay(Collision collision)
     {
-        
+
+        if(collision.transform.tag=="Player" && canDamage)
+        {
+            canDamage=false;
+
+            LeaveZoneMessage.SetActive(true);
+            StartCoroutine(nameof(FallZoneDamage));      
+
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void OnCollisionExit(Collision collision)
     {
-        
+
+        if(collision.transform.tag=="Player")
+        {
+
+            LeaveZoneMessage.SetActive(false);
+                 
+
+        }
+
     }
+
+
+    IEnumerator FallZoneDamage()
+    {
+        yield return new WaitForSeconds(2f);
+        playerHealth.Damage(3f);
+        canDamage=true;
+    }
+    
+
+   
 }

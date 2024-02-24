@@ -1752,8 +1752,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.5352, y: 6.5352, z: 6.5352}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6655130449247746371}
   m_Father: {fileID: 0}
@@ -2324,11 +2324,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _enemyAnimator: {fileID: 6877669013835745276}
-  Damage: 9
+  Damage: 7
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 20
   timeBetweenAttacks: 2.3
-  sightRange: 50
+  sightRange: 90
   attackRange: 8
   playerInSightRange: 0
   playerInAttackRange: 0
@@ -2400,10 +2400,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7488064
+  m_Radius: 1.0218611
   m_Height: 2.1943939
   m_Direction: 1
-  m_Center: {x: 0.032707985, y: 0.97875357, z: 0.010830543}
+  m_Center: {x: -0.020484455, y: 0.9787535, z: 0.01083047}
 --- !u!95 &6877669013835745276
 Animator:
   serializedVersion: 5
@@ -2440,6 +2440,7 @@ MonoBehaviour:
   healthAmountMax: 100
   startingHealthAmount: 0
   deathAnimationTime: 4
+  enemyDeathSFX: {fileID: 8300000, guid: a321ed9c5a74bda419da7cc1a2059290, type: 3}
 --- !u!1001 &5109389216442101779
 PrefabInstance:
   m_ObjectHideFlags: 0

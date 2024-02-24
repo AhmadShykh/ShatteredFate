@@ -22,7 +22,7 @@ public class MainMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
         SoundManager.instance.playSoundEffect(clickSound);
-
+        SceneManager.LoadScene("LEVEL1 1");
     }
 
     public void onClickCredits()

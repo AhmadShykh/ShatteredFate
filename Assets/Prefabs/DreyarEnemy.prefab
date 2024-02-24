@@ -1279,7 +1279,7 @@ GameObject:
   - component: {fileID: 4938210170008130608}
   m_Layer: 0
   m_Name: Dreyar By M.Aure
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1337,6 +1337,7 @@ MonoBehaviour:
     m_Bits: 8
   _enemyAnimator: {fileID: 1393337618641704503}
   _agentHealth: {fileID: 2306481900294183747}
+  Damage: 10
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenAttacks: 1.02
@@ -1374,7 +1375,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5251434260798056471}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 100
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1388,7 +1389,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84

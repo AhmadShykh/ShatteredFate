@@ -19,7 +19,7 @@ namespace CodeMonkey.HealthSystemCM {
 
         private void Start()
         {
-            //healthSystem.OnDead+= HealthSystem_OnDead;
+            healthSystem.OnDead+= HealthSystem_OnDead;
         }
 
        
@@ -47,10 +47,24 @@ namespace CodeMonkey.HealthSystemCM {
         // }
 
 
-        //  private void HealthSystem_OnDead(object sender, EventArgs e)
-        // {
-        //     Debug.Log("Died");
-        // }
+         private void HealthSystem_OnDead(object sender, EventArgs e)
+        {
+
+
+            Debug.Log("DIED");
+
+            if(this.transform.tag=="Player")
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject.transform.parent.gameObject);
+            }
+
+           
+
+        }
 
         
 

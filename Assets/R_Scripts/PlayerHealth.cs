@@ -19,10 +19,15 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
     public bool isAlreadDead=false;
 
 
+    void Awake()
+    {
+        playerHealth= new HealthSystem(100);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth= new HealthSystem(100);
+        
 
         playerHealth.OnDead+=PlayerHealth_OnDead;
         

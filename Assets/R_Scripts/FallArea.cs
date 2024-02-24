@@ -44,7 +44,7 @@ public class FallArea : MonoBehaviour
     IEnumerator FallZoneDamage()
     {
         yield return new WaitForSeconds(2f);
-        playerHealth.Damage(3f);
+        playerHealth.Damage(6f);
         canDamage=true;
     }
     

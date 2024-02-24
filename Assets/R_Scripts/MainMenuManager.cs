@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -14,9 +12,7 @@ public class MainMenuManager : MonoBehaviour
 
     void Start()
     {
-        MainMenuCanvas.SetActive(true);
-        CreditsCanvas.SetActive(false);
-        InstructionsCanvas.SetActive(false);
+    
 
     }
 
@@ -24,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void onClickStart()
     {
+        SceneManager.LoadScene(1);
         SoundManager.instance.playSoundEffect(clickSound);
 
     }

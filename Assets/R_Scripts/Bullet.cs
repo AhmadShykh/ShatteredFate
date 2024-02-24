@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Check if the collided object has a collider
-        if (collision.collider != null)
+        if (collision.collider != null && collision.transform.tag == "Enemy")
         {
             Debug.Log("Bullet collided with: " + collision.collider.name);
 

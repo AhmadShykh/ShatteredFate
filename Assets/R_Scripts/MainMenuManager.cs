@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
@@ -25,7 +26,7 @@ public class MainMenuManager : MonoBehaviour
     public void onClickStart()
     {
         SoundManager.instance.playSoundEffect(clickSound);
-
+        SceneManager.LoadScene("LEVEL1 1");
     }
 
     public void onClickCredits()

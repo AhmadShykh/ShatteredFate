@@ -269,9 +269,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3a0dc2e6868e2d4cac6ff12d239c421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmountMax: 100
+  healthAmountMax: 250
   startingHealthAmount: 0
   deathAnimationTime: 3
+  enemyDeathSFX: {fileID: 0}
+  bossDied: 0
 --- !u!4 &7785639247941920998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3724120671239420815, guid: d13b16839fc97a742ac5c5a8f5628542,

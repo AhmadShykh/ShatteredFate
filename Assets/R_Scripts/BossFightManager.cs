@@ -14,11 +14,12 @@ public class BossFightManager : MonoBehaviour
 
     void Update()
     {
-        if(enemyDreyar.GetComponent<EnemyHealth>().bossDied)
+        if(enemyDreyar!=null && enemyDreyar.GetComponent<EnemyHealth>().bossDied)
         {
             portalMessage.SetActive(true);
-            Invoke("DestroyPortalMessage",3f);
             portal.SetActive(true);
+            Invoke("DestroyPortalMessage",3f);
+            
 
         }
     }

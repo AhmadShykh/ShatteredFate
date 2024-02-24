@@ -8,7 +8,7 @@ public class Portal : MonoBehaviour
 
     public AudioClip portalSFX;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if(collision.transform.CompareTag("Player"))
         {

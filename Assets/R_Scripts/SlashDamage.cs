@@ -11,12 +11,12 @@ public class SlashDamage : MonoBehaviour
 
      private void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="Enemy" && other.name!="Dreyar By M.Aure")
+        if(other.tag=="Enemy" && other.name!="Dreyar By M.Aure" && other.name!="orc")
         {
             other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(15f);
             SoundManager.instance.playSoundEffect(enemyHurtSFX);
         }
-        else if(other.name=="Dreyar By M.Aure")
+        else if(other.name=="Dreyar By M.Aure" && other.name=="orc")
         {
             other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(4f);
             SoundManager.instance.playSoundEffect(enemyHurtSFX);

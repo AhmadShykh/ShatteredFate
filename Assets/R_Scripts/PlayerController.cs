@@ -57,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (canMove && !isShooting && !isDefending)
         {
 
-            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastRange))
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastRange) && hit.transform.tag!="Portal")
 			{
                 Debug.Log($"{hit.transform.name}");
             }

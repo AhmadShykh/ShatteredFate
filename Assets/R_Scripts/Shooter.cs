@@ -26,6 +26,6 @@ public class Shooter : MonoBehaviour
             Debug.LogError("Bullet prefab does not have a Rigidbody component.");
         }
 
-        Destroy(bullet, 5f);
+        Destroy(bullet, 3f);
     }
 }

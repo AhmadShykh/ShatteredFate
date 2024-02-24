@@ -1337,7 +1337,7 @@ MonoBehaviour:
     m_Bits: 8
   _enemyAnimator: {fileID: 1393337618641704503}
   _agentHealth: {fileID: 2306481900294183747}
-  Damage: 10
+  Damage: 50
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
   timeBetweenAttacks: 1.02

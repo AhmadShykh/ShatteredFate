@@ -17,7 +17,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     //Health And Damage
     [SerializeField] HealthSystemComponent _agentHealth;
-    [SerializeField]   float Damage = 10;
+    [SerializeField]   float Damage = 50;
 
     //Patroling
     public Vector3 walkPoint;
@@ -92,7 +92,7 @@ public class EnemyAiTutorial : MonoBehaviour
         {
             ///Attack code here
             _enemyAnimator.SetTrigger("Attack");
-            player.GetComponent<HealthSystemComponent>().GetHealthSystem().Damage(Damage);
+            player.GetComponent<PlayerHealth>().Damage(Damage);
             ///End of attack code
 
             alreadyAttacked = true;

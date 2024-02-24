@@ -11,7 +11,9 @@ public class PlayerController : MonoBehaviour
     private const string IdleTrigger = "Idle";
     private const string ShootTrigger = "Shoot";
     private const string DefendTrigger = "Defend";
+    private const string DeadTrigger = "Dead"; // New trigger for dead animation
 
+    private bool isAlive = true; // Flag to track if the player is alive
     private bool isShooting = false; // Flag to track if shooting animation is playing
     private bool isDefending = false; // Flag to track if defending animation is playing
     private bool isRunning = false; // Flag to track if the player is running
@@ -29,6 +31,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (!isAlive)
+            return; // Do nothing if the player is dead
+
         // Input for movement
         float horizontalInput = canMove ? Input.GetAxis("Horizontal") : 0f;
         float verticalInput = canMove ? Input.GetAxis("Vertical") : 0f;
@@ -45,7 +50,6 @@ public class PlayerController : MonoBehaviour
         // Move the player using Rigidbody's MovePosition method
         if (canMove && !isShooting && !isDefending)
         {
-            
             Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.deltaTime;
             rb.MovePosition(newPosition);
 
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isShooting && cooldownTimer <= 0) // Left click
         {
             shooter.Shoot();
-            
+
             // Set shooting flag and cooldown timer
             animator.SetTrigger(ShootTrigger);
             isShooting = true;
@@ -105,5 +109,11 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetTrigger(IdleTrigger);
         }
+    }
+
+    public void onDeadPlayer()
+    {
+        isAlive = false; // Mark the player as dead
+        animator.SetTrigger(DeadTrigger); // Play the dead animation
     }
 }

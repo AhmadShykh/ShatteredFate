@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
+
 
 namespace CodeMonkey.HealthSystemCM {
 
@@ -53,19 +55,19 @@ namespace CodeMonkey.HealthSystemCM {
 
             Debug.Log("DIED");
 
-            if(this.transform.tag=="Player")
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject.transform.parent.gameObject);
-            }
+            StartCoroutine("EnemyDied");
 
-           
+              
 
+        
         }
 
+        IEnumerator EnemyDied()
+        {  
+            
+            yield return new WaitForSeconds(2f);
+            Destroy(gameObject.transform.parent.gameObject);
+        }
         
 
 

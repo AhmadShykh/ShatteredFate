@@ -8,6 +8,17 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
 {
     private HealthSystem playerHealth;
 
+
+    public Animator playerAnim;
+
+    public PlayerController _playerController;
+    public Shooter _shoot;
+
+    public SlashEffect _slash;
+
+    public bool isAlreadDead=false;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +31,16 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
     private void PlayerHealth_OnDead(object sender, EventArgs e)
     {
         Debug.Log("Player Died");
+
+        //this.transform.GetComponent<PlayerController>().onDeadPlayer();
+
+        if(!isAlreadDead)
+        {
+            isAlreadDead=true;
+            StartCoroutine("DestroyPlayer");
+            
+        }
+        
     }
 
     public void Damage(float damage)
@@ -38,6 +59,19 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
     {
        return playerHealth;
     }
+
+   IEnumerator DestroyPlayer()
+   {
+
+    _playerController.enabled=false;
+    _shoot.enabled=false;
+    _slash.enabled=false;
+    playerAnim.ResetTrigger("Idle");
+    playerAnim.SetTrigger("Dead");
+    yield return new WaitForSeconds(2f);
+    Destroy(gameObject);
+
+   }
 
     
 }

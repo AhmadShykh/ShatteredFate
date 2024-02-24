@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioClip shootSFX;
     public AudioClip slashSFX;
-
+    [SerializeField] float raycastRange;
 
     void Start()
     {
@@ -56,13 +56,22 @@ public class PlayerController : MonoBehaviour
         // Move the player using Rigidbody's MovePosition method
         if (canMove && !isShooting && !isDefending)
         {
-            Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.deltaTime;
-            rb.MovePosition(newPosition);
 
-            // Update running state
-            isRunning = moveDirection != Vector3.zero;
-            // Set animation parameters
-            animator.SetBool("IsRunning", isRunning);
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, raycastRange))
+			{
+                Debug.Log($"{hit.transform.name}");
+            }
+            
+			else
+			{
+                Vector3 newPosition = transform.position + moveDirection * moveSpeed * Time.deltaTime;
+                rb.MovePosition(newPosition);
+                // Update running state
+                isRunning = moveDirection != Vector3.zero;
+                // Set animation parameters
+                animator.SetBool("IsRunning", isRunning);
+            }
+
         }
         else
         {

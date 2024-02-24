@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
             Debug.LogWarning("Not enough spawn points available.");
             return;
         }
-
+        
         // Randomly select spawn points
         for (int i = 0; i < numberOfObjectsToSpawn; i++)
         {

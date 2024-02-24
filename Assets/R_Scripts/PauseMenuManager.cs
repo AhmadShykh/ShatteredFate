@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,6 +13,8 @@ public class PauseMenuManager : MonoBehaviour
 
     private bool allowRetry=false;
 
+    private bool allowMainMenu=false;
+
 
     void Start()
     {
@@ -31,23 +29,31 @@ public class PauseMenuManager : MonoBehaviour
         {
             if(escapeCount==0)
             {
+                Time.timeScale=0;
                 escapeCount=1;
                 PauseMenuCanvas.SetActive(true);
-                Time.timeScale=0;
-                if(Input.GetKeyDown(KeyCode.M))
-                {
-                    //Main Menu Scene Load 
-                    SceneManager.LoadScene(0);
-                }
+                allowMainMenu=true;
+
+                
             }
             else if(escapeCount==1)
             {
                 escapeCount=0;
                 PauseMenuCanvas.SetActive(false);
                 Time.timeScale=1;
+                allowMainMenu=false;
 
             }
             
+        }
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            if(allowMainMenu)
+            {
+                Time.timeScale=1;
+                SceneManager.LoadScene(0);
+            }
         }
 
         if(playerHealthScript.isAlreadDead)
@@ -63,7 +69,8 @@ public class PauseMenuManager : MonoBehaviour
                 }
                 else if(Input.GetKeyDown(KeyCode.M))
                 {
-                    //Main Menu Scene Load 
+                    //Main Menu Scene Load
+                    Time.timeScale=1;
                     SceneManager.LoadScene(0);
                 }
             }

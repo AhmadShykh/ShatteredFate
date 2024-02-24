@@ -21,6 +21,9 @@ public class EnemyHealth : MonoBehaviour, IGetHealthSystem
 
     private bool dead;
 
+    public AudioClip enemyDeathSFX;
+
+
 
     private void Start()
     {
@@ -62,10 +65,11 @@ public class EnemyHealth : MonoBehaviour, IGetHealthSystem
 
 		if (!dead)
 		{
-            GetComponent<EnemyAiTutorial>().SetStop(true);
+            //GetComponent<EnemyAiTutorial>().SetStop(true);
             this.GetComponent<EnemyAiTutorial>().enabled = false;
             enemyAnim.SetTrigger("Death");
             dead = true;
+            SoundManager.instance.playSoundEffect(enemyDeathSFX);
             StartCoroutine("EnemyDied");
         }
     }

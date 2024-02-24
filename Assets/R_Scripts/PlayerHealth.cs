@@ -9,6 +9,9 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
     private HealthSystem playerHealth;
 
     public AudioClip hurtSFX;
+    public AudioClip deathSFX;
+
+    public AudioClip GameOverSFX;
 
 
     public Animator playerAnim;
@@ -40,9 +43,12 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
         Debug.Log("Player Died");
 
         //this.transform.GetComponent<PlayerController>().onDeadPlayer();
+        
 
         if(!isAlreadDead)
         {
+            SoundManager.instance.playSoundEffect(GameOverSFX);
+            SoundManager.instance.playSoundEffect(deathSFX);
             isAlreadDead=true;
             StartCoroutine("DestroyPlayer");
             
@@ -52,8 +58,12 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
 
     public void Damage(float damage)
     {
-        SoundManager.instance.playSoundEffect(hurtSFX);
-        playerHealth.Damage(damage);
+        if(!isAlreadDead)
+        {
+            SoundManager.instance.playSoundEffect(hurtSFX);
+            playerHealth.Damage(damage);
+        }
+        
     }
 
     public void Heal(float heal)

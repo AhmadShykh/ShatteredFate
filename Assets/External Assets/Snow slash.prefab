@@ -4923,3 +4923,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250fbeeca39a26240a0ba97222caa2b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyHurtSFX: {fileID: 8300000, guid: 443c2f5ea901de949a6396eb0d32b9e5, type: 3}

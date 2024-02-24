@@ -6,6 +6,9 @@ public class Bullet : MonoBehaviour
     //public GameObject Enemy;
 
 
+    public AudioClip enemyHurtSFX;
+
+
     
     public GameObject hitEffectPrefab; // Reference to the hit effect prefab
     public float hitEffectDuration = 1.0f; // Duration of the hit effect before it's destroyed
@@ -20,6 +23,8 @@ public class Bullet : MonoBehaviour
             if(collision.transform.tag=="Enemy")
             {
                 collision.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(10f);
+                SoundManager.instance.playSoundEffect(enemyHurtSFX);
+
 
             }
 

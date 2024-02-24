@@ -7,11 +7,14 @@ using UnityEngine;
 public class SlashDamage : MonoBehaviour
 {
 
+    public AudioClip enemyHurtSFX;
+
      private void OnTriggerEnter(Collider other)
     {
         if(other.tag=="Enemy")
         {
             other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(5f);
+            SoundManager.instance.playSoundEffect(enemyHurtSFX);
         }
     }
     

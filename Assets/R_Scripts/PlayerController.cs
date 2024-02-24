@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb; // Reference to the Rigidbody component
 
+
+    public AudioClip shootSFX;
+    public AudioClip slashSFX;
+
+
     void Start()
     {
         // Get the Rigidbody component
@@ -81,6 +86,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !isShooting && shootCooldownTimer <= 0) // Left click
         {
             shooter.Shoot();
+            SoundManager.instance.playSoundEffect(shootSFX);
 
             // Set shooting flag and cooldown timer
             animator.SetTrigger(ShootTrigger);
@@ -98,6 +104,7 @@ public class PlayerController : MonoBehaviour
         // Handle defend animation
         if (Input.GetMouseButtonDown(1) && !isDefending && defendCooldownTimer <= 0) // Right click
         {
+            SoundManager.instance.playSoundEffect(slashSFX);
             animator.SetTrigger(DefendTrigger);
             isDefending = true;
             isShooting = false; // Reset shooting flag

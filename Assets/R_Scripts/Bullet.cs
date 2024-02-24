@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
 
             // Instantiate the hit effect at the collision point
             GameObject hitEffect = Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
-
+            
             // Destroy the hit effect after a short delay
             Destroy(hitEffect, hitEffectDuration);
 
@@ -39,4 +39,7 @@ public class Bullet : MonoBehaviour
         //     //Enemy.GetComponent<HealthSystemComponent>().GetHealthSystem().Damage(10f);
         // }
     }
+
+
+   
 }

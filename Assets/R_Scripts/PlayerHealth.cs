@@ -8,6 +8,8 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
 {
     private HealthSystem playerHealth;
 
+    public AudioClip hurtSFX;
+
 
     public Animator playerAnim;
 
@@ -50,6 +52,7 @@ public class PlayerHealth : MonoBehaviour, IGetHealthSystem
 
     public void Damage(float damage)
     {
+        SoundManager.instance.playSoundEffect(hurtSFX);
         playerHealth.Damage(damage);
     }
 

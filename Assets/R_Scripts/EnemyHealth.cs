@@ -1,0 +1,82 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using CodeMonkey.HealthSystemCM;
+using UnityEngine;
+
+public class EnemyHealth : MonoBehaviour, IGetHealthSystem
+{
+    [Tooltip("Maximum Health amount")]
+    [SerializeField] private float healthAmountMax = 100f;
+
+    [Tooltip("Starting Health amount, leave at 0 to start at full health.")]
+    [SerializeField] private float startingHealthAmount;
+
+    private HealthSystem enemyHealth;
+
+    private Animator enemyAnim;
+
+
+    [SerializeField] private float deathAnimationTime=2f;
+
+
+
+    private void Start()
+    {
+        enemyAnim = GetComponent<Animator>();
+        enemyHealth.OnDead += HealthSystem_OnDead;
+    }
+
+
+
+    private void Awake()
+    {
+        // Create Health System
+        enemyHealth = new HealthSystem(healthAmountMax);
+
+        if (startingHealthAmount != 0)
+        {
+            enemyHealth.SetHealth(startingHealthAmount);
+        }
+    }
+
+    /// <summary>
+    /// Get the Health System created by this Component
+    /// </summary>
+    public HealthSystem GetHealthSystem()
+    {
+        return enemyHealth;
+    }
+
+
+    // public void Damage(float damage)
+    // {
+    //     healthSystem.Damage(damage);
+    // }
+
+
+    private void HealthSystem_OnDead(object sender, EventArgs e)
+    {
+
+
+        Debug.Log("DIED");
+
+        StartCoroutine("EnemyDied");
+
+
+
+
+    }
+
+    IEnumerator EnemyDied()
+    {
+
+        this.GetComponent<EnemyAiTutorial>().enabled = false;
+
+
+        enemyAnim.SetTrigger("Death");
+
+        yield return new WaitForSeconds(deathAnimationTime);
+        Destroy(gameObject.transform.parent.gameObject);
+    }
+}

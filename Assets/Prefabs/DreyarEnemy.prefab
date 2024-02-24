@@ -1271,12 +1271,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6350042122597062349}
-  - component: {fileID: 2306481900294183747}
   - component: {fileID: 628184630437510636}
   - component: {fileID: 7209841762546790947}
   - component: {fileID: 8390377641528776965}
   - component: {fileID: 1393337618641704503}
   - component: {fileID: 4938210170008130608}
+  - component: {fileID: 9066453411240599368}
   m_Layer: 0
   m_Name: Dreyar By M.Aure
   m_TagString: Enemy
@@ -1301,20 +1301,6 @@ Transform:
   - {fileID: 2503494517291264368}
   m_Father: {fileID: 1707292164271704264}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2306481900294183747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5251434260798056471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3eb9aa7183709da429076edc5294507b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthAmountMax: 100
-  startingHealthAmount: 0
 --- !u!114 &628184630437510636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,13 +1322,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _enemyAnimator: {fileID: 1393337618641704503}
-  _agentHealth: {fileID: 2306481900294183747}
-  Damage: 50
+  _agentHealth: {fileID: 0}
+  Damage: 12
   walkPoint: {x: 0, y: 0, z: 0}
-  walkPointRange: 10
+  walkPointRange: 30
   timeBetweenAttacks: 1.02
-  sightRange: 54
-  attackRange: 21
+  sightRange: 30
+  attackRange: 10
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!195 &7209841762546790947
@@ -1434,10 +1420,25 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 3.11535
+  m_Radius: 7.1755404
   m_Height: 17.834972
   m_Direction: 1
-  m_Center: {x: 0.052496918, y: 8.558405, z: -0.06521798}
+  m_Center: {x: -1.0219356, y: 8.558405, z: -0.06521798}
+--- !u!114 &9066453411240599368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5251434260798056471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3a0dc2e6868e2d4cac6ff12d239c421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthAmountMax: 100
+  startingHealthAmount: 0
+  deathAnimationTime: 2
 --- !u!1 &5597898853809117073
 GameObject:
   m_ObjectHideFlags: 0
@@ -2411,7 +2412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1707292164271704264
 Transform:
   m_ObjectHideFlags: 0

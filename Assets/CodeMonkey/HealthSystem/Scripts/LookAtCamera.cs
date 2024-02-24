@@ -13,7 +13,10 @@ namespace CodeMonkey.HealthSystemCM {
         private Transform mainCameraTransform;
 
         private void Awake() {
+            GetComponent<Canvas>().worldCamera= GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
             mainCameraTransform = Camera.main.transform;
+
+           
         }
 
         private void Update() {

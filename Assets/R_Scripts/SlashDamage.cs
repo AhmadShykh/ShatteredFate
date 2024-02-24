@@ -11,7 +11,7 @@ public class SlashDamage : MonoBehaviour
     {
         if(other.tag=="Enemy")
         {
-            other.transform.GetComponent<HealthSystemComponent>().GetHealthSystem().Damage(10f);
+            other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(5f);
         }
     }
     

@@ -19,7 +19,7 @@ public class Bullet : MonoBehaviour
 
             if(collision.transform.tag=="Enemy")
             {
-                collision.transform.GetComponent<HealthSystemComponent>().GetHealthSystem().Damage(10f);
+                collision.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(10f);
 
             }
 

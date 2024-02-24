@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     private bool isRunning = false; // Flag to track if the player is running
     private bool canMove = true; // Flag to track if the player can move
     private float animationCooldown = 0.2f; // Cooldown time for animations
-    private float cooldownTimer = 0f; // Timer to track the cooldown
+    private float shootCooldownTimer = 0f; // Timer to track the shoot cooldown
+    private float defendCooldownTimer = 0f; // Timer to track the defend cooldown
 
     private Rigidbody rb; // Reference to the Rigidbody component
 
@@ -64,14 +65,20 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(IdleTrigger);
         }
 
-        // Handle cooldown timer
-        if (cooldownTimer > 0)
+        // Handle cooldown timer for shooting
+        if (shootCooldownTimer > 0)
         {
-            cooldownTimer -= Time.deltaTime;
+            shootCooldownTimer -= Time.deltaTime;
+        }
+
+        // Handle cooldown timer for defending
+        if (defendCooldownTimer > 0)
+        {
+            defendCooldownTimer -= Time.deltaTime;
         }
 
         // Handle shoot animation
-        if (Input.GetMouseButtonDown(0) && !isShooting && cooldownTimer <= 0) // Left click
+        if (Input.GetMouseButtonDown(0) && !isShooting && shootCooldownTimer <= 0) // Left click
         {
             shooter.Shoot();
 
@@ -79,7 +86,7 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger(ShootTrigger);
             isShooting = true;
             canMove = false; // Disable movement
-            cooldownTimer = animationCooldown; // Start cooldown timer
+            shootCooldownTimer = animationCooldown; // Start shoot cooldown timer
         }
         else if (Input.GetMouseButtonUp(0)) // Release left click
         {
@@ -89,13 +96,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // Handle defend animation
-        if (Input.GetMouseButtonDown(1) && !isDefending && cooldownTimer <= 0) // Right click
+        if (Input.GetMouseButtonDown(1) && !isDefending && defendCooldownTimer <= 0) // Right click
         {
             animator.SetTrigger(DefendTrigger);
             isDefending = true;
             isShooting = false; // Reset shooting flag
             canMove = false; // Disable movement
-            cooldownTimer = animationCooldown; // Start cooldown timer
+            defendCooldownTimer = 1f; // Start defend cooldown timer (0.5 seconds)
         }
         else if (Input.GetMouseButtonUp(1)) // Release right click
         {

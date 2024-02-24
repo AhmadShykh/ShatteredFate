@@ -16,7 +16,7 @@ public class SlashDamage : MonoBehaviour
             other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(15f);
             SoundManager.instance.playSoundEffect(enemyHurtSFX);
         }
-        else if(other.name=="Dreyar By M.Aure" && other.name=="orc")
+        else if(other.name=="Dreyar By M.Aure" || other.name=="orc")
         {
             other.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(4f);
             SoundManager.instance.playSoundEffect(enemyHurtSFX);

@@ -27,9 +27,9 @@ public class Bullet : MonoBehaviour
 
 
             }
-            else if(collision.collider.name!="Dreyar By M.Aure")
+            else if(collision.collider.name=="Dreyar By M.Aure")
             {
-                collision.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(3f);
+                collision.transform.GetComponent<EnemyHealth>().GetHealthSystem().Damage(5f);
                 SoundManager.instance.playSoundEffect(enemyHurtSFX);
 
             }

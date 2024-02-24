@@ -16,7 +16,6 @@ public class EnemyAiTutorial : MonoBehaviour
 
 
     //Health And Damage
-    [SerializeField] HealthSystemComponent _agentHealth;
     [SerializeField]   float Damage = 10;
 
     //Patroling
@@ -64,6 +63,13 @@ public class EnemyAiTutorial : MonoBehaviour
         if (distanceToWalkPoint.magnitude < 1f)
             walkPointSet = false;
     }
+
+
+	public void SetStop(bool stop)
+	{
+        agent.isStopped = stop;
+	}
+
     private void SearchWalkPoint()
     {
         //Calculate random point in range

@@ -19,10 +19,12 @@ public class EnemyHealth : MonoBehaviour, IGetHealthSystem
 
     [SerializeField] private float deathAnimationTime=2f;
 
+    private bool dead;
 
 
     private void Start()
     {
+        dead = false;
         enemyAnim = GetComponent<Animator>();
         enemyHealth.OnDead += HealthSystem_OnDead;
     }
@@ -58,24 +60,20 @@ public class EnemyHealth : MonoBehaviour, IGetHealthSystem
     private void HealthSystem_OnDead(object sender, EventArgs e)
     {
 
-
-        Debug.Log("DIED");
-
-        StartCoroutine("EnemyDied");
-
-
-
-
+		if (!dead)
+		{
+            GetComponent<EnemyAiTutorial>().SetStop(true);
+            this.GetComponent<EnemyAiTutorial>().enabled = false;
+            enemyAnim.SetTrigger("Death");
+            dead = true;
+            StartCoroutine("EnemyDied");
+        }
     }
 
     IEnumerator EnemyDied()
     {
 
-        this.GetComponent<EnemyAiTutorial>().enabled = false;
-
-
-        enemyAnim.SetTrigger("Death");
-
+        
         yield return new WaitForSeconds(deathAnimationTime);
         Destroy(gameObject.transform.parent.gameObject);
     }

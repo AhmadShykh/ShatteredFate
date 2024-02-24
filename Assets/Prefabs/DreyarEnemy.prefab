@@ -1322,7 +1322,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   _enemyAnimator: {fileID: 1393337618641704503}
-  _agentHealth: {fileID: 0}
   Damage: 12
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 30
@@ -1376,7 +1375,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
@@ -2412,7 +2411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1707292164271704264
 Transform:
   m_ObjectHideFlags: 0

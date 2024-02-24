@@ -1826,7 +1826,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d2e7b1bc747bb2419e9ba82ed356a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slashParticlePrefab: {fileID: 2060900179291159282, guid: ca6705a3f9070d14d819d179493bcfa0,
+  slashParticlePrefab: {fileID: 2060900179291159282, guid: 83d513ab61d96c9479c3e0e7ed823e94,
     type: 3}
   slashPointLeft: {fileID: 995240079}
   slashDuration: 2

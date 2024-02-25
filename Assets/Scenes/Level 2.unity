@@ -2717,7 +2717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a63539468c7bf44b393f6d7eff6829, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 70
+  moveSpeed: 35
   animator: {fileID: 358890286}
   playerModel: {fileID: 358890287}
   shooter: {fileID: 358890291}
